@@ -1,48 +1,47 @@
 ---
-
 ---
 
 <header>
-    <nav>
-        <div class="logo"> <a href="index.astro"><img src="logo.svg" alt=""></a></div>
-        <ul class="menu">
-            <li><a href="#"></a>Wines</li>
-            <li><a href="#"></a>Winemakers</li>
-            <li><a href="#"></a>Regions</li>
-            <li><a href="#"></a>Subscription</li>
-            <li><a href="#"></a>Boxes</li>
-            <li><a href="#"></a>Social club</li>
-            <li><a href="#"></a>Gift Card</li>
-            <li><a href="#"></a>Deli</li>
-        </ul>
-</nav>
+  <nav>
+    <div class="logo"><a href="index.astro"><img src="logo.svg" alt="" /></a></div>
+    <ul class="menu">
+      <li><a href="#"></a>Wines</li>
+      <li><a href="#"></a>Winemakers</li>
+      <li><a href="#"></a>Regions</li>
+      <li><a href="#"></a>Subscription</li>
+      <li><a href="#"></a>Boxes</li>
+      <li><a href="#"></a>Social club</li>
+      <li><a href="#"></a>Gift Card</li>
+      <li><a href="#"></a>Deli</li>
+    </ul>
+  </nav>
 </header>
 
 <style>
-    li{
-        font-family: var(--heading-font);
-        cursor: pointer;
-        list-style: none;
-    }
-    li:hover{
-        font-weight: 600;
-    }
+  li {
+    font-family: var(--heading-font);
+    cursor: pointer;
+    list-style: none;
+  }
+  li:hover {
+    font-weight: 600;
+  }
 
-    .menu{
-display: none;
-    }
+  .menu {
+    display: none;
+  }
 
-    .logo{
-width: 15rem;
-display: block;
-margin: auto;
-    }
+  .logo {
+    width: 15rem;
+    display: block;
+    margin: auto;
+  }
 
-    @media (min-width: 700px){
-        .menu{
-            display: flex;
-            justify-content: space-between;
-            margin-inline: 1rem;
-        }
+  @media (min-width: 700px) {
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      margin-inline: 1rem;
     }
+  }
 </style>
