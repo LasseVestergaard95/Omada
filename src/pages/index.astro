@@ -3,7 +3,51 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Cta from "../components/Cta.astro";
 ---
 
-<MainLayout title= "Deli">
-    
-<Cta knaptekst = "Eksempel på cta knap"/>
+<MainLayout title="Deli">
+  <section class="hero">
+    <div>
+      <h1>Omada Wine & Deli</h1>
+      <p>Øster Farimagsgade 26</p>
+      <p>2100 København Ø</p>
+      <p>Wendesday to Sunday</p>
+      <p>11:00 - 20:00</p>
+    </div>
+    <div>
+      <img src="butik.png.webp" alt="drawing of the store" />
+    </div>
+    <div class="cta_knapper">
+      <Cta knaptekst="Upcoming events" />
+      <Cta knaptekst="Deli goods" />
+      <Cta knaptekst="Testimonials" />
+      <Cta knaptekst="About" />
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  h1 {
+    color: #f75443;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .hero {
+    text-align: center;
+    margin-block: 2rem;
+  }
+  p:nth-of-type(2),
+  p:nth-of-type(4) {
+    margin-bottom: 2rem;
+  }
+  .hero img {
+    margin-bottom: 3rem;
+  }
+  .cta_knapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .cta_knapper:hover {
+    transform: scale(1);
+  }
+</style>
