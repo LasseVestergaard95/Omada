@@ -3,17 +3,32 @@
 
 <header>
   <nav>
-    <div class="logo"><a href="index.astro"><img src="logo.svg" alt="" /></a></div>
-    <ul class="menu">
-      <li><a href="#"></a>Wines</li>
-      <li><a href="#"></a>Winemakers</li>
-      <li><a href="#"></a>Regions</li>
-      <li><a href="#"></a>Subscription</li>
-      <li><a href="#"></a>Boxes</li>
-      <li><a href="#"></a>Social club</li>
-      <li><a href="#"></a>Gift Card</li>
-      <li><a href="#"></a>Deli</li>
-    </ul>
+    <section class="mobil_header">
+      <div class="burgermenu"><img src="menu.svg" alt="" /></div>
+      <div class="logo"><a href="index.astro"><img src="logo.svg" alt="" /></a></div>
+      <div class="right_menu_mobil"><img src="search.svg" alt="search icon" /><img src="basket.svg" alt="basket icon" /></div>
+    </section>
+    <section class="desktop_header">
+      <div class="logo"><a href="index.astro"><img src="logo.svg" alt="" /></a></div>
+      <div class="bottom_menu_desktop">
+        <ul class="menu">
+          <li><a href="#"></a>Wines</li>
+          <li><a href="#"></a>Winemakers</li>
+          <li><a href="#"></a>Regions</li>
+          <li><a href="#"></a>Subscription</li>
+          <li><a href="#"></a>Boxes</li>
+          <li><a href="#"></a>Social club</li>
+          <li><a href="#"></a>Gift Card</li>
+          <li><a href="#"></a>Deli</li>
+        </ul>
+        <div class="right_menu_desktop">
+          <img src="search.svg" alt="search icon" />
+          <img src="heart.svg" alt="heart icon" />
+          <img src="profile.svg" alt="profile icon" />
+          <img src="basket.svg" alt="basket icon" />
+        </div>
+      </div>
+    </section>
   </nav>
 </header>
 
@@ -26,22 +41,64 @@
   li:hover {
     font-weight: 600;
   }
-
-  .menu {
+  .desktop_header {
     display: none;
   }
-
+  .mobil_header {
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline: 1rem;
+    gap: 1.5rem;
+    margin-block: 1rem;
+  }
+  .right_menu_mobil {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .right_menu_mobil img {
+    max-width: 1.5rem;
+  }
   .logo {
     width: 15rem;
     display: block;
     margin: auto;
   }
+  .burgermenu {
+    max-width: 1.5rem;
+  }
+
 
   @media (min-width: 700px) {
+    .logo {
+      margin-block: 1rem 1.8rem;
+    }
     .menu {
       display: flex;
-      justify-content: space-between;
-      margin-inline: 1rem;
+      gap: 1rem;
+      font-size: 1rem;
     }
+    .mobil_header {
+      display: none;
+    }
+    .desktop_header {
+      display: block;
+    }
+    .bottom_menu_desktop {
+      display: flex;
+      justify-content: space-evenly;
+      margin-inline: 1rem;
+      flex-wrap: wrap;
+    }
+    .right_menu_desktop {
+      display: flex;
+      gap: 1rem;
+    }
+    .right_menu_desktop img {
+      width: 1rem;
+    }
+    nav{
+    border-bottom: 0.8px solid ;
+    padding-bottom: 1rem;
+  }
   }
 </style>
