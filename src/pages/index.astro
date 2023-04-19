@@ -9,7 +9,7 @@ import Cta from "../components/Cta.astro";
       <h1>Omada Wine & Deli</h1>
       <p>Øster Farimagsgade 26</p>
       <p>2100 København Ø</p>
-      <p>Wendesday to Sunday</p>
+      <p>Wednesday to Sunday</p>
       <p>11:00 - 20:00</p>
     </div>
     <div>
@@ -49,5 +49,31 @@ import Cta from "../components/Cta.astro";
   }
   .cta_knapper:hover {
     transform: scale(1);
+  }
+  @media (min-width: 700px){
+    h1{
+        font-size: 3rem;
+    }
+    .hero{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block: 4rem;
+        align-items: center;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+    .hero img{
+    max-width: 30rem;
+    margin-inline: auto;
+    margin-bottom: auto;
+    }
+    .cta_knapper{
+        grid-column: span 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+        margin-block: 3rem 2rem;
+    }
   }
 </style>
