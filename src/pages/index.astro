@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Cta from "../components/Cta.astro";
 import Kampagne from "../components/Kampagne.astro";
+import Events from "../components/Events.astro";
 ---
 
 <MainLayout title="Deli">
@@ -36,6 +37,7 @@ import Kampagne from "../components/Kampagne.astro";
     <img src="hero.png" alt="" />
   </section>
   <Kampagne />
+<Events/>
 </MainLayout>
 
 <style>
@@ -67,7 +69,7 @@ import Kampagne from "../components/Kampagne.astro";
   .join_us {
     text-align: center;
     position: relative;
-    padding-bottom: 14rem;
+    padding-bottom: 12rem;
     padding-top: 2rem;
   }
   .join_us p {
@@ -77,12 +79,14 @@ import Kampagne from "../components/Kampagne.astro";
     margin-bottom: 1rem;
   }
   .join_us img {
-    max-width: 300px;
+    max-width: 200px;
     position: absolute;
     transform: rotate(-40deg);
-    top: 4rem;
+    top: 9rem;
   }
-
+  .join_us div:nth-of-type(2) {
+      z-index: 2;
+    }
 
   @media (min-width: 700px) {
     h1 {
@@ -117,9 +121,7 @@ import Kampagne from "../components/Kampagne.astro";
         margin-inline: auto; */
       padding-bottom: 6rem;
     }
-    .join_us div:nth-of-type(2) {
-      z-index: 2;
-    }
+ 
 
     .join_us p,
     .join_us h2 {
@@ -127,8 +129,8 @@ import Kampagne from "../components/Kampagne.astro";
       margin-inline: auto;
     }
     .join_us img {
-      min-width: 350px;
-      top: -120px;
+      max-width: 250px;
+      top: -25px;
     }
   }
 </style>

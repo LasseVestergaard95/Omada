@@ -1,0 +1,76 @@
+---
+import Cta from "./Cta.astro";
+---
+<section class="events">
+
+    <h2>Upcoming events</h2>
+    <div class="event_shelf">
+        <div class="event_card">
+            <img src="vinsmagning.webp" alt="vinsamgning event">
+            <p>Vinsmagning <span>20/4</span></p>
+<Cta knaptekst ="Read More"/>
+        </div>
+        <div class="event_card">
+            <img src="vinsmagning.webp" alt="vinsamgning event">
+            <p>Vinsmagning <span>20/4</span></p>
+<Cta knaptekst ="Read More"/>
+        </div>
+        <div class="event_card">
+            <img src="vinsmagning.webp" alt="vinsamgning event">
+            <p>Vinsmagning <span>20/4</span></p>
+<Cta knaptekst ="Read More"/>
+        </div>
+        <div class="event_card">
+            <img src="vinsmagning.webp" alt="vinsamgning event">
+            <p>Vinsmagning <span>20/4</span></p>
+<Cta knaptekst ="Read More"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .events{
+        padding-block: 3rem;
+    }
+    .event_shelf{
+        overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    display: flex;
+    gap: 1rem;
+    }
+    h2{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .event_card:hover{
+        cursor: pointer;
+    }
+    .event_card img{
+        width: 19rem;
+        margin-bottom: 1rem;
+    }
+    .event_card p{
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+    .event_card span{
+        font-weight: 500;
+        font-style: normal;
+        margin-left: 0.5rem;
+    }
+
+    .event_shelf div:first-of-type{
+        margin-left: 1rem;
+    }
+    .event_shelf div:last-of-type{
+        margin-right: 1rem;
+    }
+    @media (min-width: 1250px){
+        .event_shelf{
+            justify-content: center;
+        }
+    }
+
+</style>
