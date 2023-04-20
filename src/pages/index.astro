@@ -4,6 +4,8 @@ import Cta from "../components/Cta.astro";
 import Kampagne from "../components/Kampagne.astro";
 import Events from "../components/Events.astro";
 import Products from "../components/Products.astro";
+import Testimonials from "../components/Testimonials.astro";
+import TestimonialForm from "../components/TestimonialForm.astro";
 ---
 
 <MainLayout title="Deli">
@@ -26,7 +28,6 @@ import Products from "../components/Products.astro";
       <Cta knaptekst="about" />
     </div>
   </section>
-
   <!-- sektion med kort tekst og png med kaffe -->
   <section class="join_us">
     <div></div>
@@ -38,8 +39,12 @@ import Products from "../components/Products.astro";
     <img src="hero.png" alt="" />
   </section>
   <Kampagne />
-<Events/>
-<Products/>
+  <Events/>
+  <Products/>
+  <section>
+    <Testimonials/>
+    <TestimonialForm/>
+  </section>
 </MainLayout>
 
 <style>
