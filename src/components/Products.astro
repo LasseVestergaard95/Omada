@@ -1,0 +1,75 @@
+---
+import Cta from "./Cta.astro";
+---
+
+<section class="products">
+  <h2>Deli Goods</h2>
+  <div class="product_shelf">
+    <div class="product_card">
+      <img src="kaffe.png" alt="kaffe" />
+      <p>Coffee</p>
+      <p>69 dkk</p>
+    </div>
+    <div class="product_card">
+      <img src="æblemost.png" alt="æblemost" />
+      <p>Apple cider</p>
+      <p>59 dkk</p>
+    </div>
+    <div class="product_card">
+      <img src="appelsindrik.png" alt="appelsindrik" />
+      <p>Orangejuice</p>
+      <p>39 dkk</p>
+    </div>
+  </div>
+  <div><Cta knaptekst="Explore our selection" /></div>
+</section>
+<style>
+  .products {
+    padding-block: 3rem;
+  }
+
+  .product_shelf {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    gap: 1rem;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .product_card:hover {
+    cursor: pointer;
+  }
+  .product_card img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    width: 11rem;
+  }
+  .product_card p:first-of-type {
+    font-weight: 600;
+    font-style: italic;
+  }
+  .product_card p:nth-of-type(2) {
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+  }
+  
+.product_shelf div:first-of-type{
+    margin-left: 1rem;
+}
+.product_shelf div:last-of-type{
+    margin-right: 1rem;
+}
+.products div:last-of-type{
+    text-align: center;
+}
+
+@media (min-width: 700px){
+    .product_shelf{
+        justify-content: center;
+    }
+}
+</style>
