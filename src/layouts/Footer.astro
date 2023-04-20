@@ -31,7 +31,7 @@
                 <input type="submit" value="Sign up">
             </form>
             <p>
-                Sign up for our free newsletter to stay in the loop on the latest arrivals and drops, and be the first to know about new additions to our collection and exclusive events.
+                Sign up for our free newsletter to stay in the loop on the latest arrivals and drops, and be the first to know about exclusive events.
             </p>
         </div>
     </div>
@@ -50,9 +50,10 @@
     footer a {
         color: var(--main-font-color);
         text-decoration: none;
+        transition: color 0.2s ease;
     }
     footer a:hover {
-        color: #777777;
+        color: var(--omada-red);
         text-decoration: none;
     }
 
@@ -128,6 +129,8 @@
     .row {
         flex-direction: row;
         gap: 15px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     .col {
         max-width: 200px;

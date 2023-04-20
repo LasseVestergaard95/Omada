@@ -7,14 +7,16 @@ const { knaptekst } = Astro.props;
 <style>
   button {
     background-color: transparent;
-    border: solid black 1.2px;
+    border: solid var(--border-color) 1px;
     padding: 0.4rem 1rem;
     font-family: var(--heading-font);
     font-weight: 550;
     width: fit-content;
+    transition: border 0.2s ease-in-out;
   }
   button:hover {
-    border: solid black 2px;
+    border: solid var(--omada-red) 1px;
     cursor: pointer;
   }
+
 </style>

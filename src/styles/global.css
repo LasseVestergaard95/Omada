@@ -4,9 +4,13 @@
   --footer-color: #ebeadb;
   --main-font-color: #000000;
   --secondary-font-color: #fffef2;
+  --omada-red: #F75443;
 
   --heading-font: "aviano-sans", sans-serif, system-ui;
   --bodytext-font: Georgia, sans-serif;
+
+  --border-color: #534F4B;
+
 }
 
 * {
