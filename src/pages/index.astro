@@ -41,9 +41,21 @@ import TestimonialForm from "../components/TestimonialForm.astro";
   <Kampagne />
   <Events/>
   <Products/>
-  <section>
+  <section class="testimonials">
     <Testimonials/>
     <TestimonialForm/>
+  </section>
+  <section class="about-us">
+    <h2>about omada</h2>
+    <p>
+      Omada Wine & Deli in Copenhagen is your go-to for wine, food, and more! 
+    </p>
+    <p>
+      Our store features a complete lineup of natural wine, cider, and other mixed fermentations, as well as a selection of high-quality groceries and local farmers' cheese and charcuterie. 
+    </p>
+    <p>
+      You can enjoy a glass of wine in-store or join us for an open wine tasting. When a winemaker is in town, we're the place to be!
+    </p>
   </section>
 </MainLayout>
 
@@ -95,6 +107,26 @@ import TestimonialForm from "../components/TestimonialForm.astro";
   .join_us div:nth-of-type(2) {
       z-index: 2;
     }
+
+    .testimonials {
+      margin-block: 3rem;
+    }
+
+    .about-us {
+      margin-block: 6rem;
+    }
+
+    .about-us h2 {
+      text-align: center;
+      margin-block: 2rem;
+    }
+
+    .about-us p {
+      max-width: 65ch;
+      margin-inline: auto;
+      margin-bottom: 1rem;
+    }
+
 
   @media (min-width: 700px) {
     h1 {
