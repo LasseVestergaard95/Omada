@@ -4,7 +4,7 @@
 <header>
   <nav>
     <section class="mobil_header">
-      <div class="burgermenu"><img src="menu.svg" alt="" /></div>
+      <lottie-player class="burgermenu" src="menuV2.json"  background="transparent"  speed="1.6"></lottie-player>
       <div class="logo"><a href="index.astro"><img src="logo.svg" alt="" /></a></div>
       <div class="right_menu_mobil"><img src="search.svg" alt="search icon" /><img src="basket.svg" alt="basket icon" /></div>
     </section>
@@ -31,6 +31,30 @@
     </section>
   </nav>
 </header>
+
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+<!-- lottie player play on click -->
+<script>
+    const nav = document.querySelector('.burgermenu');
+    let clicked = false;
+    nav.addEventListener('click', () => {
+        if (clicked) {
+            nav.setDirection(-1);
+            nav.play();
+            clicked = false;
+        } else {
+            nav.setDirection(1);
+            nav.play();
+            clicked = true;
+        }
+    });
+
+</script>
+
+
 
 <style>
   li {
@@ -65,7 +89,7 @@
     margin: auto;
   }
   .burgermenu {
-    max-width: 1.5rem;
+    max-width: 2.8rem;
   }
 
 
