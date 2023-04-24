@@ -1,5 +1,4 @@
 ---
-import { createClient } from '@supabase/supabase-js';
 ---
 
 <h2>tell us what you think</h2>
@@ -7,29 +6,43 @@ import { createClient } from '@supabase/supabase-js';
 <form id="testimonial-form" action="">
     <div class="info-fields">
         <input type="text" name="name" value="" placeholder="Name..." id="name"/>
-        <input type="text" name="email" value="" placeholder="E-mail..." id="email"/>
+        <input type="email" name="email" value="" placeholder="E-mail..." id="email"/>
     </div>
     <textarea name="text" value="" placeholder="What do you think?" id="text"/>
     <input type="submit" name="submit" value="submit"/>
 </form>
 
 <script>
+    // Define the Supabase URL where the testimonials will be stored
     const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co/rest/v1/testimonials';
+
+    // Define the Supabase API key
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptY3lpa3htaWF5dWhnZnd0c2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMjc5NzgsImV4cCI6MTk5NzkwMzk3OH0.XEziRlwGxjmj3Xd6Y3hwWVW36m80dJSlqNRrXbWn-LQ';
-
+    
+    // Get the testimonial form element
     const form = document.querySelector('#testimonial-form');
-
+    
+    // Add a submit event listener to the form
     form.addEventListener('submit', async (e) => {
+        // Prevent the default form submission behavior
         e.preventDefault();
+
+        // Show an alert to the user
         alert('Thank you for your testimonial!');
+
+        // Get the input values from the form
         const name = form.querySelector('#name').value;
         const text = form.querySelector('#text').value;
         const email = form.querySelector('#email').value;
+
+        // Create an object with the input data
         const data = {
             name,
             email,
             text
         }
+
+        // Send a POST request to the Supabase API to save the testimonial
         const response = await fetch(supabaseUrl, {
             method: 'POST',
             headers: {
@@ -38,13 +51,16 @@ import { createClient } from '@supabase/supabase-js';
             },
             body: JSON.stringify(data)
         });
-        const result = await response.json();
-        console.log(result);
     })
 
+    // Add a second submit event listener to the form
     form.addEventListener('submit', async (e) => {
+
+        // Prevent the default form submission behavior
         e.preventDefault();
-       form.reset();
+
+        // Reset the form fields
+        form.reset();
     })
     
 </script>

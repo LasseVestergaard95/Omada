@@ -1,24 +1,28 @@
 ---
+// Import the createClient function from the Supabase JS library
 import { createClient } from '@supabase/supabase-js';
 
-
+// Define the Supabase URL and API key
 const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptY3lpa3htaWF5dWhnZnd0c2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMjc5NzgsImV4cCI6MTk5NzkwMzk3OH0.XEziRlwGxjmj3Xd6Y3hwWVW36m80dJSlqNRrXbWn-LQ';
-    const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptY3lpa3htaWF5dWhnZnd0c2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMjc5NzgsImV4cCI6MTk5NzkwMzk3OH0.XEziRlwGxjmj3Xd6Y3hwWVW36m80dJSlqNRrXbWn-LQ';
 
-    const response = await supabase
-        .from('testimonials')
-		.select('*')
-		// .eq('approved', true)
-		.order('created_at', { ascending: false });
+// Create a Supabase client instance
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-        const testimonials = response.data;
-        console.log(testimonials);
+// Query the 'testimonials' table and retrieve "show=true" records, sorted by creation date
+const response = await supabase
+    .from('testimonials')
+    .select('*')
+    .eq('show', true)
+    .order('created_at', { ascending: false });
 
-    // convert created_at in data to normal date display
-    testimonials.forEach((testimonial) => {
-    testimonial.created_at = new Date(testimonial.created_at).toLocaleDateString();
-	});
+    const testimonials = response.data;
+    console.log(testimonials);
+
+// convert created_at in data to normal date display
+testimonials.forEach((testimonial) => {
+testimonial.created_at = new Date(testimonial.created_at).toLocaleDateString();
+});
 ---
 
 <div class="banner">
@@ -26,9 +30,11 @@ const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co';
         <div class="scroller">
         {testimonials.map((testimonial) => (
             <div class="testimonial">
-                <h2 class="name">{testimonial.name}</h2>
                 <p class="text">"{testimonial.text}"</p>
-                <p class="date">{testimonial.created_at}</p>
+                <div class="name-date">
+                    <p class="name">- {testimonial.name}</p>
+                    <p class="date">{testimonial.created_at}</p>
+                </div>
             </div>
         )
         )}
@@ -60,7 +66,7 @@ const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co';
     .scroller {
         display: flex;
         flex-direction: row;
-        gap: 16rem;
+        gap: 18rem;
         justify-content: space-between;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -76,15 +82,8 @@ const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co';
         flex-direction: column;
         justify-content: space-between;;
         align-items: center;
-    }
-
-    .name {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.08rem;
-        width: 140%;
-        text-align: center;
+        height: 7rem;
+        max-width: 8rem;
     }
 
     .text {
@@ -94,10 +93,27 @@ const supabaseUrl = 'https://zmcyikxmiayuhgfwtsea.supabase.co';
         text-align: center;
     }
 
+    .name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.08rem;
+        width: 140%;
+        text-align: center;
+        font-family: var(--heading-font);
+        white-space: nowrap;
+    }
+
     .date {
         font-size: 0.8rem;
-        font-weight: 100;
-        margin-top: 0.5rem;
+        font-weight: 10;
+    }
+
+    .name-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.6rem;
     }
 
 </style>
