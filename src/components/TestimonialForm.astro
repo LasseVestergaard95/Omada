@@ -13,7 +13,7 @@
 <script>
   const url = "https://zmcyikxmiayuhgfwtsea.supabase.co/rest/v1/testimonials";
   const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptY3lpa3htaWF5dWhnZnd0c2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMjc5NzgsImV4cCI6MTk5NzkwMzk3OH0.XEziRlwGxjmj3Xd6Y3hwWVW36m80dJSlqNRrXbWn-LQ";
-
+ 
   const form = document.querySelector("form");
   form.addEventListener("submit", sendForm);
 
@@ -23,7 +23,7 @@
     let name = formData.name.value;
     let text = formData.text.value;
 
-    // console.log(formData);
+    console.log(formData);
 
     fetch(url, {
       method: "POST",
