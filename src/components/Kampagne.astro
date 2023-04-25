@@ -42,7 +42,7 @@
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         gap: 1rem;
     }
@@ -82,6 +82,7 @@
         height: 100%;
         width: 100%;
         transform: translate(-50%, 0%) scale(2) rotate(5deg);
+        display: none;
     }
 
     .img-col-2 {
@@ -92,6 +93,7 @@
         height: 100%;
         width: 100%;
         transform: translate(50%, 0%) scale(2) rotate(-5deg);
+        display: none;
     }
 
     form {
@@ -138,7 +140,21 @@
     @media (min-width: 700px) {
         .form-fields {
             flex-direction: row;
-    }
+        }
+
+        .grid {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+        }
+
+        .img-col-1 {
+            display: block;
+        }
+
+        .img-col-2 {
+            display: block;
+        }
     }
 
 
