@@ -16,13 +16,16 @@ const response = await supabase
     .eq('show', true)
     .order('created_at', { ascending: false });
 
-    const testimonials = response.data;
-    console.log(testimonials);
+// Store the testimonials in a variable
+const testimonials = response.data;
 
 // convert created_at in data to normal date display
 testimonials.forEach((testimonial) => {
-testimonial.created_at = new Date(testimonial.created_at).toLocaleDateString();
+    testimonial.created_at = new Date(testimonial.created_at).toLocaleDateString();
 });
+
+// Log the testimonials to the console
+console.log(testimonials);
 ---
 
 <div class="banner">

@@ -21,7 +21,7 @@ import Cta from "./Cta.astro";
       <p>39 dkk</p>
     </div>
   </div>
-  <div><Cta knaptekst="Explore our selection" /></div>
+  <div class="cta"><Cta knaptekst="Explore our selection"/></div>
 </section>
 <style>
   .products {
@@ -63,8 +63,14 @@ import Cta from "./Cta.astro";
 .product_shelf div:last-of-type{
     margin-right: 1rem;
 }
-.products div:last-of-type{
+/* .products div:last-of-type{
     text-align: center;
+} */
+
+.cta {
+    text-align: center;
+    margin-top: 1rem;
+
 }
 
 @media (min-width: 700px){
