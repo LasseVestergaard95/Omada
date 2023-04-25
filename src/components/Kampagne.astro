@@ -4,7 +4,8 @@
 
 <section class="campaign">
     <div class="grid">
-        <div class="img-col-1">
+        <div class="img-container-1">
+            <div class="img-col-1"></div>
         </div>
         <div class="campaign-col">
             <h2>Limited time only</h2>
@@ -18,9 +19,10 @@
             </form>
             <p class="banner-bottom-text">*Only at in-store purchase over 200 DKK. The goodie-bag has a value of 450 DKK</p>
         </div>
-        <div class="img-col-2">
-
+        <div class="img-container-2">
+            <div class="img-col-2"></div>
         </div>
+
     </div>
 </section>
 
@@ -52,7 +54,7 @@
         letter-spacing: 0.08em;
         font-size: 2.5rem;
         text-align: center;
-        white-space: nowrap;
+
     }
 
     p {
@@ -77,22 +79,22 @@
     .img-col-1 {
         background-image: url("omadasplash.webp");
         background-size: cover;
-        background-position: center;
+        background-position: right;
         background-repeat: no-repeat;
         height: 100%;
         width: 100%;
-        transform: translate(-50%, 0%) scale(2) rotate(0deg);
-        display: none;   
+        transform: translate(-70%, 0%) scale(2) rotate(0deg);
+        display: none;
     }
 
     .img-col-2 {
         background-image: url("omadasplash.webp");
         background-size: cover;
-        background-position: center;
+        background-position: left;
         background-repeat: no-repeat;
         height: 100%;
         width: 100%;
-        transform: translate(50%, 0%) scale(2) rotate(0deg);
+        transform: translate(70%, 0%) scale(2) rotate(0deg);
         display: none;
     }
 
