@@ -1,0 +1,66 @@
+---
+
+---
+
+<section class="join_us">
+    <div></div>
+    <div>
+      <h2>Join us at Omada</h2>
+      <p>Discover natural wine, local food & groceries at Omada Wine & Deli in Østerbro, Copenhagen.</p>
+      <p>Join us for wine tastings, food events & more.</p>
+    </div>
+    <img src="hero.png" alt="" />
+  </section>
+
+  <style>
+
+    .join_us {
+        text-align: center;
+        position: relative;
+        padding-bottom: 12rem;
+        padding-top: 2rem;
+     }
+     
+    .join_us p {
+        padding-inline: 1.5rem;
+    }
+
+    .join_us p:first-of-type {
+        margin-bottom: 1rem;
+    }
+
+    .join_us img {
+        position: absolute;
+        max-width: 200px;
+        transform: rotate(-40deg);
+        top: 6.5rem;
+        z-index: 1;
+    }
+
+    .join_us div:nth-of-type(2) {
+        z-index: 2;
+    }
+
+    @media (min-width: 700px) {
+    .join_us {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        /* max-width: 1200px;
+        margin-inline: auto; */
+        padding-bottom: 6rem;
+    }
+ 
+
+    .join_us p,
+    .join_us h2 {
+        max-width: 65ch;
+        margin-inline: auto;
+    }
+    .join_us img {
+        max-width: 350px;
+        top: -11rem;
+        right: 73vw;
+    }
+    }
+
+  </style>

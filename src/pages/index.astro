@@ -6,6 +6,7 @@ import Events from "../components/Events.astro";
 import Products from "../components/Products.astro";
 import Testimonials from "../components/Testimonials.astro";
 import TestimonialForm from "../components/TestimonialForm.astro";
+import JoinUs from "../components/JoinUs.astro";
 ---
 
 <MainLayout title="Deli">
@@ -28,16 +29,7 @@ import TestimonialForm from "../components/TestimonialForm.astro";
       <Cta knaptekst="about" />
     </div>
   </section>
-  <!-- sektion med kort tekst og png med kaffe -->
-  <section class="join_us">
-    <div></div>
-    <div>
-      <h2>Join us at Omada</h2>
-      <p>Discover natural wine, local food & groceries at Omada Wine & Deli in Østerbro, Copenhagen.</p>
-      <p>Join us for wine tastings, food events & more.</p>
-    </div>
-    <img src="hero.png" alt="" />
-  </section>
+  <JoinUs />
   <Kampagne />
   <Events/>
   <Products/>
@@ -86,46 +78,25 @@ import TestimonialForm from "../components/TestimonialForm.astro";
   .cta_knapper:hover {
     transform: scale(1);
   }
-  .join_us {
+
+  .testimonials {
+    margin-block: 3rem;
+  }
+
+  .about-us {
+    margin-block: 6rem;
+  }
+
+  .about-us h2 {
     text-align: center;
-    position: relative;
-    padding-bottom: 12rem;
-    padding-top: 2rem;
+    margin-block: 2rem;
   }
-  .join_us p {
-    padding-inline: 1.5rem;
-  }
-  .join_us p:first-of-type {
+
+  .about-us p {
+    max-width: 65ch;
+    margin-inline: auto;
     margin-bottom: 1rem;
   }
-  .join_us img {
-    max-width: 200px;
-    position: absolute;
-    transform: rotate(-40deg);
-    top: 9rem;
-  }
-  .join_us div:nth-of-type(2) {
-      z-index: 2;
-    }
-
-    .testimonials {
-      margin-block: 3rem;
-    }
-
-    .about-us {
-      margin-block: 6rem;
-    }
-
-    .about-us h2 {
-      text-align: center;
-      margin-block: 2rem;
-    }
-
-    .about-us p {
-      max-width: 65ch;
-      margin-inline: auto;
-      margin-bottom: 1rem;
-    }
 
 
   @media (min-width: 700px) {
@@ -154,23 +125,5 @@ import TestimonialForm from "../components/TestimonialForm.astro";
       gap: 3rem;
       margin-block: 3rem 2rem;
     }
-    .join_us {
-      display: grid;
-      grid-template-columns: 30% 1fr;
-      /* max-width: 1200px;
-        margin-inline: auto; */
-      padding-bottom: 6rem;
-    }
- 
-
-    .join_us p,
-    .join_us h2 {
-      max-width: 65ch;
-      margin-inline: auto;
-    }
-    .join_us img {
-      max-width: 250px;
-      top: -25px;
-    }
-  }
+}
 </style>
